@@ -1,6 +1,7 @@
 import configureStore from './store/store';
 import { bugAdded, bugRemoved, bugResolved, getUnresolvedBugs } from './store/bugs';
 import { addProjects } from './store/projects';
+import { addUser } from './store/users';
 
 const store = configureStore();
 console.log(store);
@@ -17,6 +18,9 @@ store.dispatch(bugAdded({ description: 'Bug 3' }));
 store.dispatch(bugAdded({ description: 'Bug 4' }));
 store.dispatch(bugRemoved({ id: 4 }));
 store.dispatch(bugResolved({ id: 1 }));
+
+store.dispatch(addUser({ name: "Rishabh Agrawal" }));
+store.dispatch(addUser({ name: "Shikha Bansal" }));
 
 
 console.log(store.getState());
